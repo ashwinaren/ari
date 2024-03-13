@@ -1,0 +1,60 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                controller="DependentPicklistApexClass">
+    <!-- call doInit function on component load -->  
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    
+    <!-- aura attributes-->  
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="listDependingValues" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    <aura:attribute name="listSubDependingValues" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    
+    <aura:attribute name="depnedentFieldMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="subDepnedentFieldMap" type="map" description="map to store sub dependent values with controlling value"/>
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/> 
+    <aura:attribute name="bDisabledSubDependentFld" type="boolean" default="true"/> 
+    
+    
+    <aura:attribute name="objDetail" type="Lead" default="{'sobjectType' : 'Lead'}"/>
+    <aura:attribute name="controllingFieldAPI" type="string" default="Lead_Status__c" description="store field API name of Controller field"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="Closed_reason__c" description="store field API name of dependent field"/>
+    <aura:attribute name="subDependingFieldAPI" type="string" default="Lead_Close_Reason__c" description="store field API name of sub dependent field"/>
+    
+    <!--Controller Field-->
+    <lightning:layoutItem size="12" padding="around-small">    
+        <lightning:select name="controllerFld"
+                          value="{!v.objDetail.Lead_Status__c}"
+                          label="Lead Status"
+                          onchange="{!c.onControllerFieldChange}">
+            <aura:iteration items="{!v.listControllingValues}" var="val">
+                <option value="{!val}">{!val}</option>
+            </aura:iteration>
+        </lightning:select>
+    </lightning:layoutItem>
+    
+    <!--Dependent Field-->
+    <lightning:layoutItem size="12" padding="around-small">
+        <lightning:select name="dependentFld"
+                          value="{!v.objDetail.Closed_reason__c}"
+                          label="Closed Reason"
+                          disabled="{!v.bDisabledDependentFld}"
+                          onchange="{!c.onSubControllerFieldChange}">
+            <aura:iteration items="{!v.listDependingValues}" var="val">
+                <option value="{!val}">{!val}</option>
+            </aura:iteration>
+        </lightning:select>
+    </lightning:layoutItem>
+    
+    <!--sub Dependent Field-->
+    <lightning:layoutItem size="12" padding="around-small">
+        <lightning:select name="Lead Close Reason"
+                          value="{!v.objDetail.Lead_Close_Reason__c}"
+                          label="language"
+                          disabled="{!v.bDisabledSubDependentFld}">
+            <aura:iteration items="{!v.listSubDependingValues}" var="val">
+                <option value="{!val}">{!val}</option>
+            </aura:iteration>
+        </lightning:select>
+    </lightning:layoutItem>
+    
+</aura:component>

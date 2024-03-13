@@ -1,0 +1,23 @@
+<template>
+    <lightning-card  title="Hello">
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+        <p slot="footer">Card Footer
+            <c-lookup-cmp handlelookupdata={handlelookupdata}></c-lookup-cmp>
+        </p>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter Contact Name" onfocus={handleInputFocus} onblur={handleInputBlur} 
+                                        onchange={handleInputChange}></lightning-input>
+            <template if:true={spinner}>
+                <lightning-spinner variant="brand" size="small" data:id="mySpinner"></lightning-spinner>
+            </template>
+            <template if:true={InputValue}>
+                <lightning-pill label={InputValue} name={InputValue} onremove={clear} onclick={handleClick}>
+                    <lightning-avatar src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg" fallback-icon-name="standard:user" variant="circle"  alternative-text="User avatar"></lightning-avatar>
+                </lightning-pill>
+                <lightning-button variant="brand" label="Search Contact" title="Con" onclick={handleSearchClick} class="slds-m-left_x-small"></lightning-button>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

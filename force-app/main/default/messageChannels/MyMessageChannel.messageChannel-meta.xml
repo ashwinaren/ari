@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+   <masterLabel>MyMessageChannel</masterLabel>
+   <isExposed>true</isExposed>
+   <description>This Lightning Message Channel sends information from VF to LWC</description>
+
+   <lightningMessageFields>
+       <fieldName>messageToSend</fieldName>
+       <description>message To Send</description>
+   </lightningMessageFields>
+
+   <lightningMessageFields>
+       <fieldName>sourceSystem</fieldName>
+       <description>My source?</description>
+   </lightningMessageFields>
+
+</LightningMessageChannel>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a sample Lightning Message Channel.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This is the record Id that changed</description>
+        <fieldName>recordId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is sample message</description>
+        <fieldName>message</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the source message</description>
+        <fieldName>source</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The current data representing the record that changed</description>
+        <fieldName>recordData</fieldName>
+    </lightningMessageFields>
+    <masterLabel>SampleMessageChannel</masterLabel>
+</LightningMessageChannel>-->

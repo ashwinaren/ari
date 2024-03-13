@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Dual List Box Example" icon-name="custom:custom43">
+        <template if:true={IndustryValues.data}>
+            <lightning-dual-listbox name="Industries"
+                                    label="Select Industries"
+                                    source-label="Available"
+                                    selected-label="Selected"
+                                    field-level-help="This is a dual listbox"
+                                    options={IndustryValues.data.values}
+                                    onchange={handleChange}></lightning-dual-listbox>
+        </template><br/>
+    <div class="slds-box" >
+        <p>Selected values are: <b style="color:blue;">{selected}</b></p>
+    </div>
+</lightning-card>
+</template>

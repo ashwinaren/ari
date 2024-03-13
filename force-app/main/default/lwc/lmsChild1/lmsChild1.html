@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="LMS Child1" icon-name="custom:custom30">
+        <lightning-input type="text" value={msgToPublish} label="Enter Msg" onchange={setMsg}></lightning-input>
+        <lightning-button
+            variant="brand"
+            type="submit"
+            label="Call Parent"
+            class="slds-align_absolute-center" 
+            style="height:5rem"
+            onclick={handleSubscribe}>
+        </lightning-button>
+        <lightning-button
+            variant="brand"
+            type="submit"
+            label="Enable Subscribe"
+            class="slds-align_absolute-center" 
+            style="height:5rem"
+            onclick={enableSubscribe}>
+        </lightning-button>
+        <p><b>Parent Message Received:</b></p>
+            <p>{receivedMessage}</p> 
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-combobox name="stat"
+                        label="State"
+                        placeholder="Select State"
+                        options={states}
+                        onchange={handleStateChange}>
+    </lightning-combobox>
+    <lightning-combobox name="cit"
+                        label="City"
+                        placeholder="Select City"
+                        options={cities}
+                        onchange={handleCityChange} >
+    </lightning-combobox><br/><br/>
+    <template if:true={showmap}>
+        <lightning-map
+              map-markers={mapMarkers}
+              onmarkerselect={handleMarkerSelect}
+              markers-title={markersTitle}
+              selected-marker-value={selectedMarkerValue}
+              show-footer={showFooter}>
+          </lightning-map>
+        </template>
+</template>

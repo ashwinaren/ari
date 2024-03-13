@@ -1,0 +1,65 @@
+<aura:component controller="LeadAuraController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!--<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="ownerList" access="PUBLIC" type="list" default="object[]" />-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="strRecordId" type="String" />
+    <!--<aura:attribute name="contactList" type="list" default="object[]" /> -->
+     <aura:attribute name="contactList" type="object" default="object[]" />   
+    <div class="slds-m-around_xx-large">
+        <h1 class="slds-text-heading--medium">Leads</h1>
+        <br/>
+        <h1 class="slds-text-heading--medium">{!v.contactList.UserType}</h1>
+        <h1 class="slds-text-heading--medium">{!v.contactList.User}</h1>
+        <!--Contact List Table-->
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer" role="grid">      
+            <thead>  
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="UserType">UserType</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="User">User</div>
+                    </th>
+                     
+                    <!--<th scope="col">
+                        <div class="slds-truncate" title="Email">Email</div>
+                    </th>-->
+                </tr>
+            </thead>
+            <tbody>        
+                <aura:iteration items="{!v.contactList}" var="con">
+                    <tr>
+                        <th>
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox aura:id="checkContact" value="" text="{!con.UserId}"/>
+                                <span class="slds-checkbox--faux" />
+                                <span class="slds-form-element__label"></span>
+                            </label>
+                        </th>
+                        <th scope="row">
+                            <div class="slds-truncate" title="{!con.UserType}">{!con.UserType}</div>
+                        </th>
+                        <th scope="row">
+                            <div class="slds-truncate" title="{!con.User}">{!con.User}</div>
+                        </th>
+                        <!--<td>
+                            <div class="slds-truncate" title="{!con.Email}">{!con.Email}</div>
+                        </td>-->
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        <div>
+            <br/>
+            <lightning:button label="Submit" class="slds-button_brand" onclick="{!c.handleSelectedContacts }"  />
+        </div>
+    </div>
+    <!--<div onkeyup="{! c.handleKeyUp }">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Select BDX User new Lead Owner"
+            type="search"
+        />
+    </div>-->
+</aura:component>

@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Please Select Lead Status and Close Reason"><br/>
+        <div class="slds-grid slds-gutters" style="margin-left:3%">
+        <!-- 1 Starts-->
+            <div class="slds-col slds-size_1-of-4">
+                <lightning-combobox label="Lead Status" 
+                                    name="Status" 
+                                    onchange={handeStatusChange} 
+                                    options={controllingVal} 
+                                    placeholder="--None--" 
+                                    value={selectedStatus}></lightning-combobox><br/>
+                
+                <div if:true={selectedStatus}>
+                    Lead Status: <b>{selectedStatus}</b>
+                </div>
+            </div>
+        <!--1 Ends-->
+            <!--<div class="slds-col slds-size_1-of-4">
+                <lightning-combobox label="Closed Reason" 
+                                    name="country" 
+                                    onchange={handleCountryChange} 
+                                    options={controllingValues} 
+                                    placeholder="--None--" 
+                                    value={selectedCountry}></lightning-combobox><br/>
+                
+                <div if:true={selectedCountry}>
+                    Closed Reason: <b>{selectedCountry}</b>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-4">
+                <lightning-combobox label="Close Reason" 
+                                    name="state"
+                                    onchange={handleStateChange} 
+                                    options={dependentValues} 
+                                    placeholder="--None--" 
+                                    value={selectedState}
+                                    disabled={isEmpty}></lightning-combobox><br/>
+                <div if:true={selectedState}>
+                    Lead Close Reason: <b>{selectedState}</b>
+                </div>
+            </div>-->
+        </div><br/>
+
+        <div if:true={error}>
+            <p>{error}</p>
+        </div>
+    </lightning-card>
+</template>

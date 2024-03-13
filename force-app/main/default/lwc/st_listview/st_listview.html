@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Student Details" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={studentInfo}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={studentInfo}
+                    columns={columns}
+                    onsave={handleSave}>
+                </lightning-datatable>
+                <lightning-helptext icon-name="utility:salesforce1" content="Full text explanation of feature"></lightning-helptext>
+            </template>
+            <template if:false={studentInfo}>
+                No Students found
+            </template>
+             <!-- picklist to show recordtype names at center of the page-->
+            <div class="slds-align_absolute-center">
+                <lightning-combobox name="rec" label="Record Type" placeholder="Select Record Type"
+                        options={recArray} onchange={handleStateChange}>
+                </lightning-combobox>
+            </div>
+        </div>
+    </lightning-card>
+</template>

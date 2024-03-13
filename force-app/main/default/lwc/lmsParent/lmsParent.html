@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="LMS - Child">
+    <!--<div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" value={msgToPublish} label="Enter Sales Msg" onchange={setMsg}></lightning-input>
+        <lightning-button
+            variant="brand"
+            type="submit"
+            label="Publish"
+            class="slds-align_absolute-center" 
+            style="height:5rem"
+            onclick={handlePublish}>
+        </lightning-button>
+    </div>
+    <lightning-button
+            variant="brand"
+            type="submit"
+            label="Enable Subscribe"
+            class="slds-align_absolute-center" 
+            style="height:5rem"
+            onclick={handleSubscribe}>
+        </lightning-button>-->
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="text" onchange={inputTextHandler} placeholder="Enter Message"></lightning-input>
+        </div>
+        <br>
+        <div class="slds-p-horizontal_small">
+            <lightning-button variant="brand" label="Publish" onclick={publishHandler}>
+            </lightning-button>
+        </div>
+    <!--<p><b>Child Message Received:</b></p>
+            <p>{receivedMessage}</p> -->
+    </lightning-card>            
+</template>

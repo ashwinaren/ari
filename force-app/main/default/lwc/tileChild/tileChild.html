@@ -1,0 +1,11 @@
+<template>
+    <template if:true={clearall}>
+        <h1>I am child</h1>
+    </template>
+    <lightning-map
+          map-markers={mapMarkers}
+          onmarkerselect={handleMarkerSelect}
+          markers-title={markersTitle}
+          center={center}>
+      </lightning-map>
+</template>

@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<lightning:picklistPath aura:id="picklistPath" recordId="{!v.recordId}" variant="linear"
+        picklistFieldApiName="StageName" onselect="{!c.handleSelect}">
+    </lightning:picklistPath>
+    <lightning:flow aura:id="flowData" />
+</aura:component>

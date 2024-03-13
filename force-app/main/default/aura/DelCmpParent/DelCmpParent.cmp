@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" controller="ContactListController" access="global" >
+	<!-- attributes -->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="5"/>
+	<aura:attribute name="selectedRow" type="boolean" default="false"/>
+    <aura:attribute name="selectedRec" type="Contact" />
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.ContactList }"/>
+
+    <!-- the container element determine the height of the datatable -->
+    <div style="height: 500px">
+        <h1>Selected Rows: {! v.selectedRowsCount }</h1>
+        <lightning:datatable
+            columns="{! v.columns }"
+            data="{! v.data }"
+            keyField="id"
+            maxRowSelection="{! v.maxRowSelection }"
+            onrowselection="{! c.updateSelectedText }" aura:id="tabl"/>
+    </div>
+    <h1>Inside  row</h1>
+    <aura:if isTrue="{!v.selectedRow}">
+        <c:DelCmp selectedRec="{!selectedRec}"/>
+        <h1>Inside selcted row</h1>
+    </aura:if>
+</aura:component>

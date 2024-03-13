@@ -1,0 +1,34 @@
+<!--
+* BD2-594 : Lookup Result component returns related users based on input text
+* Author - Ashwin   
+* Date   - 10/26/2021
+-->
+<template>
+    <li class="slds-listbox__item" onclick={onClickRecord}>
+        <span id="listbox-option-unique-id-01"
+            class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+            role="option">
+            <span class="slds-media__figure">
+                <span class="slds-icon_container" title="User">
+                    <lightning-icon icon-name="standard:user" class="slds-icon slds-icon_small" size="small"
+                        alternative-text="icon"></lightning-icon>
+                </span>
+            </span>
+            <span class="slds-media__body">
+                <span class="slds-listbox__option-text slds-listbox__option-text_entity">{record.Name}
+                    <!--<ul>
+                        <li>
+                            <span class="slds-media__figure">
+                                <span class="slds-icon_container" title="Account">
+                                    <lightning-icon icon-name="standard:account" class="slds-icon slds-icon_xx-small"
+                                        size="xx-small" alternative-text="icon"></lightning-icon>
+                                </span>
+                            </span>
+                            UserName : <b>{record.Name}</b>
+                        </li>
+                    </ul>-->
+                </span>
+            </span>
+        </span>
+    </li>
+</template>

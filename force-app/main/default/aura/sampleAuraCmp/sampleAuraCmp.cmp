@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <div class="slds-m-around_xx-large">
+        <div class="slds-form-element">
+            <lightning:helptext iconName="utility:info" content="Your email address will be your login name" />
+            <lightning:input aura:id="email" placeholder="Please enter your email" required="true" type="email" label="Email" name="email" />
+            <!--Helptext and tooltip component-->
+            <lightning:helptext iconName="utility:info" content="Please enter valid phone number" />
+            <lightning:input type="tel" label="Phone" name="phone" placeholder="areacode-phone"/>
+        </div>
+    </div>
+</aura:component>

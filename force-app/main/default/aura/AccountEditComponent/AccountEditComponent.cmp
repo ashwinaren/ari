@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="strRecordId" type="String" />
+    <lightning:overlayLibrary aura:id="overlayLibDemo1"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    <div class="slds-theme_default">
+        <lightning:recordEditForm aura:id="editform"
+                                  onsubmit="{!c.handleSubmit}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  recordId="{!v.strRecordId}"
+                                  objectApiName="Account">
+            <lightning:messages />
+            
+            <lightning:inputField fieldName="Name" aura:id="accName" />
+            <lightning:inputField fieldName="Industry" />
+            <lightning:inputField fieldName="Phone" />          
+            <lightning:inputField fieldName="Type" />
+            <div class="slds-m-top_medium">
+                <lightning:button variant="brand" type="submit" name="save" label="Save" />
+            </div>
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" >
+    <!--<aura:registerEvent name="loadMyEvent" type="c:leadOwnerEvt"/>-->
+
+    
+    <lightning:picklistPath aura:id="picklistPath" recordId="{!v.recordId}"
+        variant="linear"
+        picklistFieldApiName="Lead_Status__c"
+        onselect="{!c.handleSelect}">
+    </lightning:picklistPath>
+</aura:component>
