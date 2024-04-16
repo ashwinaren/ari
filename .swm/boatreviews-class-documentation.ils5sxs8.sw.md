@@ -5,7 +5,7 @@ title: BoatReviews  Class Documentation
 
 ---
 
-This auraenabled method used to get all the boat reviews with id, If no Id fectches all the boat reviews. Edited
+This auraenabled method used to get all the boat reviews with id, If no Id fectches all the boat reviews. Edited New
 
 ```apex
 	@AuraEnabled
