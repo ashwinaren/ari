@@ -5,7 +5,7 @@ title: AnimalsCallouts Class Documentation
 
 ---
 
-This Method used to make callout to get animals list from heroku
+This Method used to make callout to get animals list from heroku updated
 
 ```apex
     public static HttpResponse makeGetCallout() {
