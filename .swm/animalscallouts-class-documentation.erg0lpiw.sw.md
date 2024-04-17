@@ -1,7 +1,7 @@
 ---
 title: AnimalsCallouts Class Documentation
 ---
-<SwmSnippet path="/force-app/main/default/classes/AnimalsCallouts.cls" line="2">
+<SwmSnippet path="/force-app/main/default/classes/AnimalsCallouts.cls" line="2" collapsed>
 
 ---
 
@@ -33,7 +33,7 @@ This Method used to make callout to get animals list from heroku
 
 </SwmSnippet>
 
-<SwmSnippet path="/force-app/main/default/classes/AnimalsCallouts.cls" line="21">
+<SwmSnippet path="/force-app/main/default/classes/AnimalsCallouts.cls" line="21" collapsed>
 
 ---
 
@@ -62,5 +62,31 @@ This Method used to handle the response from callout .
 ---
 
 </SwmSnippet>
+
+```mermaid
+classDiagram
+    Animal <|-- Duck
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+      +String beakColor
+      +swim()
+      +quack()
+    }
+    class Fish{
+      -int sizeInFeet
+      -canEat()
+    }
+    class Zebra{
+      +bool is_wild
+      +run()
+    }
+```
+
+&nbsp;
 
 <SwmMeta version="3.0.0" repo-id="Z2l0aHViJTNBJTNBYXJpJTNBJTNBYXNod2luYXJlbg==" repo-name="ari"><sup>Powered by [Swimm](https://app.swimm.io/)</sup></SwmMeta>
